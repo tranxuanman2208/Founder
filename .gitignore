@@ -1,0 +1,68 @@
+# --- .gitignore cho Dự án WPF (C# / Visual Studio) ---
+
+# Thư mục Build và Kết quả Biên dịch
+####################################
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+**/[Rr]esharper/[Tt]emp/
+
+# Các gói Nuget
+################
+# Bỏ qua thư mục packages (nếu không sử dụng PackageReference trong csproj)
+# packages/
+
+# Bỏ qua file khôi phục gói nuget (Package restore files)
+*.nuget.props
+*.nuget.targets
+*.pckg.props
+*.pckg.targets
+
+# Khôi phục dependency Nuget (Visual Studio 2017+)
+.vs/
+.vs/packages/
+
+# Thư mục và File Tạm thời của Visual Studio
+############################################
+# Bỏ qua thư mục .vs (Visual Studio 2017+)
+.vs/
+
+# Thư mục và File Tạm thời khác
+*.user
+*.suo
+*.sln.docstates
+*.vshost.*
+
+# Các file do Visual Studio tạo ra
+*.csproj.user
+*.vcproj.user
+*.vcxproj.user
+*.vbproj.user
+*.wdproj.user
+*.sfproj.user
+*.shproj.user
+*.vsix
+*.vsixmanifest
+.editorconfig
+.vssettings
+
+# Các file Test Results
+TestResults/
+
+# File Lịch sử Cơ sở Dữ liệu cục bộ
+*.mdf
+*.ldf
+
+# Các file generated bởi Resharper/JetBrains
+*.DotSettings.user
+*.ReSharper
+
+# --- CÁC FILE HỆ THỐNG ĐIỀU HÀNH CHUNG ---
+##########################################
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
