@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="WpfMapDijkstra.Views.BasicPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="Auto" Width="Auto">
+
+    <Grid Margin="5" Background="#FF969696">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="10" VerticalAlignment="Top">
+            <Button Name="btnChangeBackground" Click="btnChangeBackground_Click" Margin="5">Chọn bản đồ</Button>
+            <Button Name="btnZoomIn" Click="btnZoomIn_Click" Margin="5">Phóng to</Button>
+            <Button Name="btnZoomOut" Click="btnZoomOut_Click" Margin="5">Thu nhỏ</Button>
+
+            <Button Name="btnAddNode" Click="btnAddNode_Click" Margin="5">Thêm đỉnh</Button>
+            <Button Name="btnConnect" Click="btnConnect_Click" Margin="5">Nối 2 đỉnh</Button>
+            <Button Name="btnSetStart" Click="btnSetStart_Click" Margin="5">Chọn Start</Button>
+            <Button Name="btnSetEnd" Click="btnSetEnd_Click" Margin="5">Chọn End</Button>
+            <Button Name="btnDeleteNode" Click="btnDeleteNode_Click" Margin="5">Xóa đỉnh</Button>
+            <Button Name="btnDeleteEdge" Click="btnDeleteEdge_Click" Margin="5">Xóa đường</Button>
+            <Button Name="btnReset" Click="btnReset_Click" Margin="5">Khôi phục</Button>
+            <Button Name="btnConnectAll" Click="btnConnectAll_Click" Margin="5">Start đến tất cả</Button>
+            <Button Name="btnFind" Click="btnFind_Click" Margin="5">Start đến End</Button>
+            <Button Name="btnClear" Click="btnClear_Click" Margin="5">Xóa tất cả</Button>
+
+            <TextBlock Margin="5">Trọng số:</TextBlock>
+            <TextBox Name="txtWeight" Text="1" Margin="5"/>
+
+            <TextBlock Margin="5" Text="Thông tin thao tác"/>
+            <TextBlock Name="txtInfo" Margin="5" Text=""/>
+            <TextBlock Margin="5" Text="Kết quả:"/>
+            <TextBox Name="txtOutput" Margin="5" TextWrapping="Wrap" Height="120" VerticalScrollBarVisibility="Auto"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Margin="5">
+            <Canvas Name="MapCanvas" Background="LightGray"/>
+        </Grid>
+    </Grid>
+</UserControl>
