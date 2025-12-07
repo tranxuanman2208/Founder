@@ -37,7 +37,11 @@
 
         <!-- Canvas -->
         <Grid Grid.Column="1" Margin="5">
-            <Canvas Name="MapCanvas" Background="LightGray"/>
+            <Canvas Name="MapCanvas">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/map.jpg" Stretch="UniformToFill"/>
+                </Canvas.Background>
+            </Canvas>
         </Grid>
 
     </Grid>
