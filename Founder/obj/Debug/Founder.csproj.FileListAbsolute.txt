@@ -46,3 +46,26 @@ C:\Users\TRAN XUAN MAN\source\repos\Founder\Founder\obj\Debug\Founder.csproj.Gen
 C:\Users\TRAN XUAN MAN\source\repos\Founder\Founder\obj\Debug\Founder.csproj.CoreCompileInputs.cache
 C:\Users\TRAN XUAN MAN\source\repos\Founder\Founder\obj\Debug\trangchu.exe
 C:\Users\TRAN XUAN MAN\source\repos\Founder\Founder\obj\Debug\trangchu.pdb
+C:\Documents\PJG\Founder\Founder\bin\Debug\trangchu.exe
+C:\Documents\PJG\Founder\Founder\bin\Debug\trangchu.exe.config
+C:\Documents\PJG\Founder\Founder\bin\Debug\trangchu.pdb
+C:\Documents\PJG\Founder\Founder\obj\Debug\Founder.csproj.AssemblyReference.cache
+C:\Documents\PJG\Founder\Founder\obj\Debug\MainWindow.baml
+C:\Documents\PJG\Founder\Founder\obj\Debug\Views\BasicPage.baml
+C:\Documents\PJG\Founder\Founder\obj\Debug\Views\Func1Page.baml
+C:\Documents\PJG\Founder\Founder\obj\Debug\Views\Func2Page.baml
+C:\Documents\PJG\Founder\Founder\obj\Debug\MainWindow.g.cs
+C:\Documents\PJG\Founder\Founder\obj\Debug\Views\BasicPage.g.cs
+C:\Documents\PJG\Founder\Founder\obj\Debug\Views\Func1Page.g.cs
+C:\Documents\PJG\Founder\Founder\obj\Debug\Views\Func2Page.g.cs
+C:\Documents\PJG\Founder\Founder\obj\Debug\Views\HomePage.g.cs
+C:\Documents\PJG\Founder\Founder\obj\Debug\App.g.cs
+C:\Documents\PJG\Founder\Founder\obj\Debug\trangchu_MarkupCompile.cache
+C:\Documents\PJG\Founder\Founder\obj\Debug\trangchu_MarkupCompile.lref
+C:\Documents\PJG\Founder\Founder\obj\Debug\Views\HomePage.baml
+C:\Documents\PJG\Founder\Founder\obj\Debug\trangchu.g.resources
+C:\Documents\PJG\Founder\Founder\obj\Debug\trangchu.Properties.Resources.resources
+C:\Documents\PJG\Founder\Founder\obj\Debug\Founder.csproj.GenerateResource.cache
+C:\Documents\PJG\Founder\Founder\obj\Debug\Founder.csproj.CoreCompileInputs.cache
+C:\Documents\PJG\Founder\Founder\obj\Debug\trangchu.exe
+C:\Documents\PJG\Founder\Founder\obj\Debug\trangchu.pdb
