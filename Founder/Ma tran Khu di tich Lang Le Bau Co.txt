@@ -1,0 +1,36 @@
+Ma tran Khu di tich Lang Le Bau Co
+Dia chi: , Thanh pho Ho Chi Minh
+Thong tin ve Dia diem:
+1. Vi tri
+Thuoc xa Le Minh Xuan, huyen Binh Chanh, TP Ho Chi Minh.
+Cach trung tam TP khoang 20 km ve huong Tay – Tay Nam.
+
+2. Gioi thieu chung
+La khu di tich ghi dau cuoc chien Lang Le – Bau Co nam 1946, mot trong nhung tran danh mo man cho phong trao khang chien o Sai Gon – Cho Lon – Gia Dinh.
+Noi day dan va du kich da dung dia hinh dap Bau Co, truong Lang Le de danh chan quan Phap.
+
+3. Gia tri lich su
+The hien y chi khang chien cua nhan dan vung ven Sai Gon thoi ky dau chong thuc dan.
+La mot trong nhung khu di tich quan trong cua Binh Chanh, thuoc he thong di tich TP Ho Chi Minh.
+
+4. Hien trang tham quan
+Co cac hang muc: bia tuong niem, nha tru trien lam, khu cong vien cay xanh, mo hinh tai hien tran danh.
+La dia diem giao duc truyen thong cho hoc sinh, sinh vien, doan vien thanh nien.
+
+5. Luu y
+Khu di tich nam gan khu dan cu, thich hop tham quan ket hop voi duong ngoai khoa.
+Nen di buoi sang hoac chieu muon de tranh nang.
+
+Ky hieu trong Ma tran ke: F
+Ma tran ke:
+	A	B	C	D	E	F	G	H	I	J
+A	0	5	54	37	56	23	98	38	18	101
+B	5	0	60	39	59	29	97	36	16	102
+C	54	60	0	90	110	58	144	50	54	147
+D	37	39	90	0	20	55	70	73	52	45
+E	56	59	110	20	0	74	53	92	72	27
+F	23	29	58	55	74	0	119	60	38	123
+G	98	97	144	70	53	119	0	107	96	32
+H	38	36	50	73	92	60	107	0	23	111
+I	18	16	54	52	72	38	96	23	0	97
+J	101	102	147	45	27	123	32	111	97	0

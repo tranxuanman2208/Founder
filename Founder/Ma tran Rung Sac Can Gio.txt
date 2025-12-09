@@ -1,0 +1,35 @@
+Ma tran Rung Sac Can Gio
+Dia chi: , Thanh pho Ho Chi Minh
+Thong tin ve Dia diem:
+1. Vi tri
+Nam o huyen Can Gio, cach trung tam TP Ho Chi Minh khoang 50 km ve huong Dong Nam.
+La khu vuc rung ngap man, noi tiep giua song Sai Gon – Dong Nai va vung bien Can Gio.
+
+2. Gioi thieu chung
+Rung Sac la Khu du tru sinh quyen the gioi duoc UNESCO cong nhan nam 2000.
+Co he sinh thai da dang: rung ngap man, rung tram, rung dua nuoc, cac vuon chim, doi khi, ca sau nuoc ngot…
+
+3. Vai tro lich su
+Thoi chien tranh, la can cu cua Dac cong Rung Sac, noi dien ra nhieu tran danh bat ngo tren song.
+Moi truong kho khan, vung bat, nuoc len – xuong lien tuc, duoc xem la mot trong nhung mat tran ac liet nhat.
+
+4. Diem tham quan noi bat
+Khu di tich Can cu Rung Sac
+Dao khi (dao khi rung ngap man)
+Khu du lich Vam Sat
+Thap tang 26 m ngam toan canh rung
+Cau Khi, rung dua nuoc, vuon chim
+
+Ky hieu trong Ma tran ke: D
+Ma tran ke:
+	A	B	C	D	E	F	G	H	I	J
+A	0	5	54	37	56	23	98	38	18	101
+B	5	0	60	39	59	29	97	36	16	102
+C	54	60	0	90	110	58	144	50	54	147
+D	37	39	90	0	20	55	70	73	52	45
+E	56	59	110	20	0	74	53	92	72	27
+F	23	29	58	55	74	0	119	60	38	123
+G	98	97	144	70	53	119	0	107	96	32
+H	38	36	50	73	92	60	107	0	23	111
+I	18	16	54	52	72	38	96	23	0	97
+J	101	102	147	45	27	123	32	111	97	0
