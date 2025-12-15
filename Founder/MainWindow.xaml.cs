@@ -49,6 +49,7 @@ namespace MapShortestPath
             MapCanvas.MouseMove += MapCanvas_MouseMove;
             MapCanvas.MouseLeftButtonUp += MapCanvas_MouseLeftButtonUp;
             MapCanvas.MouseWheel += MapCanvas_MouseWheel;
+            MapCanvas.MouseRightButtonDown += MapCanvas_MouseRightButtonDown;
         }
 
         // ===================================================
@@ -589,6 +590,25 @@ namespace MapShortestPath
 
             txtOutput.Text = "";
             txtInfo.Text = "Đã xóa tất cả.";
+        }
+
+        // Sự kiện click chuột phải để xem chi tiết
+        private void MapCanvas_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Point p = e.GetPosition(MapCanvas);
+            Node n = GetNodeAtPoint(p); // Hàm này code cũ bạn đã có rồi
+
+            if (n != null)
+            {
+                // Node 0 là A, 1 là B,...
+                int index = nodes.IndexOf(n);
+                char idChar = (char)('A' + index); // 0 -> A, 1 -> B
+                string id = idChar.ToString();
+
+                // Mở cửa sổ chi tiết
+                DetailWindow detail = new DetailWindow(id);
+                detail.ShowDialog();
+            }
         }
     }
 
