@@ -261,10 +261,10 @@ namespace WpfMapDijkstra.Views
 
             Ellipse el = new Ellipse()
             {
-                Width = 26,
-                Height = 26,
-                Fill = Brushes.LightBlue,
-                Stroke = Brushes.DarkBlue,
+                Width = 20,
+                Height = 20,
+                Fill = Brushes.Red,
+                Stroke = Brushes.White,
                 StrokeThickness = 2
             };
             MapCanvas.Children.Add(el);
