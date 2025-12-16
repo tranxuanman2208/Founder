@@ -2,8 +2,8 @@
 
 # Thư mục Build và Kết quả Biên dịch
 ####################################
-[Bb]in/
-[Oo]bj/
+**/[Bb]in/
+**/[Oo]bj/
 [Dd]ebug/
 [Rr]elease/
 **/[Rr]esharper/[Tt]emp/
