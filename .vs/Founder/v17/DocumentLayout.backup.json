@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\TRAN XUAN MAN\\source\\repos\\Founder\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{98E5CD1F-A9DE-4269-8C00-F21A0A69AD84}|Founder\\Founder.csproj|c:\\users\\tran xuan man\\source\\repos\\founder\\founder\\detailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{98E5CD1F-A9DE-4269-8C00-F21A0A69AD84}|Founder\\Founder.csproj|solutionrelative:founder\\detailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{98E5CD1F-A9DE-4269-8C00-F21A0A69AD84}|Founder\\Founder.csproj|c:\\users\\tran xuan man\\source\\repos\\founder\\founder\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{98E5CD1F-A9DE-4269-8C00-F21A0A69AD84}|Founder\\Founder.csproj|solutionrelative:founder\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98E5CD1F-A9DE-4269-8C00-F21A0A69AD84}|Founder\\Founder.csproj|c:\\users\\tran xuan man\\source\\repos\\founder\\founder\\locationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E5CD1F-A9DE-4269-8C00-F21A0A69AD84}|Founder\\Founder.csproj|solutionrelative:founder\\locationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98E5CD1F-A9DE-4269-8C00-F21A0A69AD84}|Founder\\Founder.csproj|c:\\users\\tran xuan man\\source\\repos\\founder\\founder\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E5CD1F-A9DE-4269-8C00-F21A0A69AD84}|Founder\\Founder.csproj|solutionrelative:founder\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,18 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\TRAN XUAN MAN\\source\\repos\\Founder\\Founder\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Founder\\MainWindow.xaml",
               "ToolTip": "C:\\Users\\TRAN XUAN MAN\\source\\repos\\Founder\\Founder\\MainWindow.xaml",
               "RelativeToolTip": "Founder\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-05T12:01:12.923Z",
+              "WhenOpened": "2025-12-16T07:52:16.858Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\TRAN XUAN MAN\\source\\repos\\Founder\\Founder\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Founder\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\TRAN XUAN MAN\\source\\repos\\Founder\\Founder\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Founder\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAKcBAAAAAAAAAAAYwLUBAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T05:14:16.768Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DetailWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\TRAN XUAN MAN\\source\\repos\\Founder\\Founder\\DetailWindow.xaml",
+              "RelativeDocumentMoniker": "Founder\\DetailWindow.xaml",
+              "ToolTip": "C:\\Users\\TRAN XUAN MAN\\source\\repos\\Founder\\Founder\\DetailWindow.xaml",
+              "RelativeToolTip": "Founder\\DetailWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-16T09:07:34.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LocationData.cs",
+              "DocumentMoniker": "C:\\Users\\TRAN XUAN MAN\\source\\repos\\Founder\\Founder\\LocationData.cs",
+              "RelativeDocumentMoniker": "Founder\\LocationData.cs",
+              "ToolTip": "C:\\Users\\TRAN XUAN MAN\\source\\repos\\Founder\\Founder\\LocationData.cs",
+              "RelativeToolTip": "Founder\\LocationData.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwCAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T07:03:27.232Z",
               "EditorCaption": ""
             }
           ]

@@ -1,17 +1,17 @@
 ﻿<Window x:Class="MapShortestPath.DetailWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Thông tin địa điểm" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+        Title="Thông tin địa điểm" Height="296" Width="561" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="20">
-        <StackPanel>
+        <StackPanel Margin="-10,0,-14,-16">
             <TextBlock x:Name="TxtName" Text="Tên Địa Điểm" FontSize="24" FontWeight="Bold" Foreground="#007ACC" Margin="0,0,0,10"/>
             <TextBlock x:Name="TxtAddress" Text="Địa chỉ..." FontSize="14" FontStyle="Italic" Foreground="Gray" Margin="0,0,0,20"/>
-            <Border BorderBrush="LightGray" BorderThickness="1" Height="300">
+            <Border BorderBrush="LightGray" BorderThickness="1" Height="100">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <TextBlock x:Name="TxtContent" Text="Nội dung chi tiết..." Margin="10" TextWrapping="Wrap" FontSize="16"/>
                 </ScrollViewer>
             </Border>
-            <Button Content="Đóng" Width="100" Margin="0,10,0,0" Click="Button_Click" Height="30"/>
+            <Button Content="Đóng" Width="100" Margin="0,20,0,0" Click="Button_Click" Height="30"/>
         </StackPanel>
     </Grid>
 </Window>

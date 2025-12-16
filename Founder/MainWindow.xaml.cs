@@ -22,155 +22,23 @@ namespace MapShortestPath
         enum Mode { None, AddNode, Connect, SetStart, SetEnd, DeleteNode, DeleteEdge }
         Mode currentMode = Mode.None;
 
-        // Danh sách đỉnh và cạnh
         List<Node> nodes = new List<Node>();
         List<Edge> edges = new List<Edge>();
 
         // Đỉnh Start và End
         Node startNode = null;
         Node endNode = null;
-
-        // Dùng tạm khi chọn 2 đỉnh để nối/xóa cạnh
         Node tempA = null;
-
-        // Zoom hiện tại của hình nền
-        private double zoomFactor = 1.0;
-
-        // Dùng để kéo map (panning)
-        private Point lastMousePos;
-        private bool isPanning = false;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            // Gán các sự kiện chuột cho MapCanvas
-            MapCanvas.MouseLeftButtonDown += MapCanvas_MouseLeftButtonDown;
-            MapCanvas.MouseMove += MapCanvas_MouseMove;
-            MapCanvas.MouseLeftButtonUp += MapCanvas_MouseLeftButtonUp;
-            MapCanvas.MouseWheel += MapCanvas_MouseWheel;
-            MapCanvas.MouseRightButtonDown += MapCanvas_MouseRightButtonDown;
         }
-
-        // ===================================================
-        //  NÚT PHÓNG TO - THU NHỎ
-        // ===================================================
-        private void btnZoomIn_Click(object sender, RoutedEventArgs e)
-        {
-            zoomFactor += 0.1;
-            ApplyBackgroundZoom();
-        }
-
-        private void btnZoomOut_Click(object sender, RoutedEventArgs e)
-        {
-            zoomFactor -= 0.1;
-            if (zoomFactor < 0.1) zoomFactor = 0.1;
-            ApplyBackgroundZoom();
-        }
-
-        // Áp dụng zoom vào hình nền
-        private void ApplyBackgroundZoom()
-        {
-            if (MapCanvas.Background is ImageBrush brush &&
-                brush.Transform is TransformGroup tg)
-            {
-                var st = tg.Children.OfType<ScaleTransform>().FirstOrDefault();
-
-                if (st != null)
-                {
-                    st.ScaleX = zoomFactor;
-                    st.ScaleY = zoomFactor;
-                }
-            }
-        }
-
-        // ===================================================
-        //  ZOOM BẰNG CUỘN CHUỘT THEO VỊ TRÍ CON TRỎ
-        // ===================================================
-        private void MapCanvas_MouseWheel(object sender, MouseWheelEventArgs e)
-        {
-            if (MapCanvas.Background is ImageBrush brush &&
-                brush.Transform is TransformGroup tg)
-            {
-                var st = tg.Children.OfType<ScaleTransform>().FirstOrDefault();
-                var tt = tg.Children.OfType<TranslateTransform>().FirstOrDefault();
-
-                if (st != null && tt != null)
-                {
-                    // Vị trí chuột để zoom theo điểm đó
-                    Point mousePos = e.GetPosition(MapCanvas);
-
-                    double oldZoom = zoomFactor;
-                    zoomFactor += e.Delta > 0 ? 0.1 : -0.1;
-                    if (zoomFactor < 0.1) zoomFactor = 0.1;
-
-                    double scaleChange = zoomFactor / oldZoom;
-
-                    // Giữ điểm dưới con trỏ không bị lệch khi zoom
-                    tt.X = (tt.X - mousePos.X) * scaleChange + mousePos.X;
-                    tt.Y = (tt.Y - mousePos.Y) * scaleChange + mousePos.Y;
-
-                    // Áp dụng scale
-                    st.ScaleX = zoomFactor;
-                    st.ScaleY = zoomFactor;
-                }
-            }
-        }
-
-        // ===================================================
-        //  DRAG – KÉO HÌNH NỀN BẰNG CHUỘT
-        // ===================================================
         private void MapCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            lastMousePos = e.GetPosition(MapCanvas);
-
-            // Chế độ mặc định → kéo nền bản đồ
-            if (currentMode == Mode.None)
-            {
-                isPanning = true;
-                MapCanvas.CaptureMouse();
-            }
-            else
-            {
-                // Nếu đang ở chế độ AddNode/Connect/...
-                HandleCanvasClick(lastMousePos);
-            }
+            Point p = e.GetPosition(MapCanvas);
+            HandleCanvasClick(p);
         }
-
-        private void MapCanvas_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isPanning &&
-                MapCanvas.Background is ImageBrush brush &&
-                brush.Transform is TransformGroup tg)
-            {
-                var tt = tg.Children.OfType<TranslateTransform>().FirstOrDefault();
-
-                if (tt != null)
-                {
-                    Point pos = e.GetPosition(MapCanvas);
-                    Vector delta = pos - lastMousePos;
-
-                    // Kéo nền
-                    tt.X += delta.X;
-                    tt.Y += delta.Y;
-
-                    lastMousePos = pos;
-                }
-            }
-        }
-
-        private void MapCanvas_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            if (isPanning)
-            {
-                isPanning = false;
-                MapCanvas.ReleaseMouseCapture();
-            }
-        }
-
-        // ===================================================
-        //  XỬ LÝ CLICK TRONG CÁC CHẾ ĐỘ: ADD/CONNECT/DELETE...
-        // ===================================================
         private void HandleCanvasClick(Point p)
         {
             // Thêm đỉnh
@@ -231,9 +99,6 @@ namespace MapShortestPath
             }
         }
 
-        // ===================================================
-        //  CHỌN CÁC CHẾ ĐỘ
-        // ===================================================
         private void btnAddNode_Click(object sender, RoutedEventArgs e)
         {
             currentMode = Mode.AddNode;
@@ -271,10 +136,6 @@ namespace MapShortestPath
             txtInfo.Text = "Chế độ: Xóa đường (chọn 2 đỉnh)";
             tempA = null;
         }
-
-        // ===================================================
-        //  RESET MÀU SẮC VỀ MẶC ĐỊNH
-        // ===================================================
         private void btnReset_Click(object sender, RoutedEventArgs e)
         {
             foreach (var n in nodes)
@@ -289,9 +150,6 @@ namespace MapShortestPath
             txtInfo.Text = "Đã đặt lại.";
         }
 
-        // ===================================================
-        //  THÊM ĐỈNH (NODE)
-        // ===================================================
         private Node AddNode(Point p)
         {
             int idx = nodes.Count + 1;
@@ -332,18 +190,12 @@ namespace MapShortestPath
             nodes.Add(n);
             return n;
         }
-
-        // Tìm đỉnh nào ở vị trí click (theo bán kính 15px)
         private Node GetNodeAtPoint(Point p)
         {
             return nodes.FirstOrDefault(n =>
                 Math.Sqrt((n.X - p.X) * (n.X - p.X) +
                           (n.Y - p.Y) * (n.Y - p.Y)) < 15);
         }
-
-        // ===================================================
-        //  THÊM CẠNH (EDGE)
-        // ===================================================
         private void AddEdge(Node a, Node b)
         {
             // Tránh nối trùng
@@ -355,8 +207,8 @@ namespace MapShortestPath
             }
 
             // Lấy trọng số
-            double w = 1;
-            double.TryParse(txtWeight.Text, out w);
+            double w = Math.Sqrt(Math.Pow((a.X-b.X),2) + Math.Pow((a.Y - b.Y),2));
+            w = Math.Round(Math.Sqrt(w)/(double)10, 1);
 
             // Vẽ đường thẳng
             Line line = new Line()
@@ -391,9 +243,6 @@ namespace MapShortestPath
             });
         }
 
-        // ===================================================
-        //  XÓA CẠNH
-        // ===================================================
         private void DeleteEdge(Node a, Node b)
         {
             Edge ed = edges.FirstOrDefault(e =>
@@ -412,10 +261,6 @@ namespace MapShortestPath
 
             edges.Remove(ed);
         }
-
-        // ===================================================
-        //  XÓA ĐỈNH
-        // ===================================================
         private void DeleteNode(Node n)
         {
             // Xóa tất cả cạnh liên quan
@@ -433,10 +278,8 @@ namespace MapShortestPath
 
             nodes.Remove(n);
         }
-
-        // ===================================================
-        //  TÌM ĐƯỜNG NGẮN NHẤT – DIJKSTRA
-        // ===================================================
+        
+        //Tìm đường theo Dijkstra
         private void btnFind_Click(object sender, RoutedEventArgs e)
         {
             if (startNode == null || endNode == null)
@@ -451,7 +294,7 @@ namespace MapShortestPath
             var dist = nodes.ToDictionary(n => n, n => double.PositiveInfinity);
             dist[startNode] = 0;
 
-            var pq = new List<Node>(nodes);  // Giống priority queue đơn giản
+            var pq = new List<Node>(nodes);
 
             while (pq.Any())
             {
@@ -507,9 +350,6 @@ namespace MapShortestPath
             txtInfo.Text = "Hoàn tất";
         }
 
-        // ===================================================
-        //  TÔ MÀU ĐƯỜNG TỪ START ĐẾN TẤT CẢ CÁC ĐỈNH
-        // ===================================================
         private void btnConnectAll_Click(object sender, RoutedEventArgs e)
         {
             if (startNode == null)
@@ -578,9 +418,6 @@ namespace MapShortestPath
             txtInfo.Text = "Đường từ Start đến tất cả đỉnh.";
         }
 
-        // ===================================================
-        //  XÓA TOÀN BỘ
-        // ===================================================
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             MapCanvas.Children.Clear();
@@ -596,36 +433,27 @@ namespace MapShortestPath
         private void MapCanvas_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(MapCanvas);
-            Node n = GetNodeAtPoint(p); // Hàm này code cũ bạn đã có rồi
+            Node n = GetNodeAtPoint(p);
 
             if (n != null)
             {
-                // Node 0 là A, 1 là B,...
                 int index = nodes.IndexOf(n);
-                char idChar = (char)('A' + index); // 0 -> A, 1 -> B
+                char idChar = (char)('A' + index);
                 string id = idChar.ToString();
-
-                // Mở cửa sổ chi tiết
                 DetailWindow detail = new DetailWindow(id);
                 detail.ShowDialog();
             }
         }
     }
 
-    // ===================================================
-    //  LỚP NODE (ĐỈNH)
-    // ===================================================
     public class Node
     {
         public Ellipse Ui;    // Hình tròn vẽ trên canvas
         public TextBlock Label; // Tên hiển thị
         public double X, Y;     // Tọa độ
-        public string Name;     // Định danh (Đ1, Đ2...)
+        public string Name;     // Định danh
     }
 
-    // ===================================================
-    //  LỚP EDGE (CẠNH)
-    // ===================================================
     public class Edge
     {
         public Node A, B;      // Hai đỉnh

@@ -11,9 +11,6 @@
 
         <!-- Cột nút thao tác -->
         <StackPanel Grid.Column="0" Margin="10" VerticalAlignment="Top">
-            <Button Name="btnZoomIn" Click="btnZoomIn_Click" Margin="5">Phóng to</Button>
-            <Button Name="btnZoomOut" Click="btnZoomOut_Click" Margin="5">Thu nhỏ</Button>
-
             <Button Name="btnAddNode" Click="btnAddNode_Click" Margin="5">Thêm đỉnh</Button>
             <Button Name="btnConnect" Click="btnConnect_Click" Margin="5">Nối 2 đỉnh</Button>
             <Button Name="btnSetStart" Click="btnSetStart_Click" Margin="5">Chọn Start</Button>
@@ -26,18 +23,18 @@
             <Button Name="btnClear" Click="btnClear_Click" Margin="5">Xóa tất cả</Button>
 
             <TextBlock Margin="5">Trọng số:</TextBlock>
-            <TextBox Name="txtWeight" Text="1" Margin="5"/>
+            <TextBox Name="txtWeight" Margin="5"/>
 
             <TextBlock Margin="5" Text="Thông tin thao tác"/>
             <TextBlock Name="txtInfo" Margin="5"/>
 
             <TextBlock Margin="5" Text="Kết quả:"/>
-            <TextBox Name="txtOutput" Margin="5" TextWrapping="Wrap" Height="120" VerticalScrollBarVisibility="Auto"/>
+            <TextBox Name="txtOutput" TextWrapping="Wrap" Height="120" VerticalScrollBarVisibility="Auto"/>
         </StackPanel>
 
         <!-- Canvas -->
         <Grid Grid.Column="1" Margin="5">
-            <Canvas Name="MapCanvas">
+            <Canvas Name="MapCanvas" MouseLeftButtonDown="MapCanvas_MouseLeftButtonDown" MouseRightButtonDown="MapCanvas_MouseRightButtonDown">
                 <Canvas.Background>
                     <ImageBrush ImageSource="pack://application:,,,/map.jpg" Stretch="UniformToFill"/>
                 </Canvas.Background>
